@@ -61,6 +61,7 @@
 #import "WPTabBarController.h"
 #import <WPMediaPicker/WPMediaPicker.h>
 #import <WordPressEditor/WPLegacyEditorFormatToolbar.h>
+#import <BuddyBuildSDK/BuddyBuildSDK.h>
 
 int ddLogLevel = DDLogLevelInfo;
 
@@ -125,6 +126,8 @@ int ddLogLevel = DDLogLevelInfo;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [BuddyBuildSDK setup];
+    
     DDLogVerbose(@"didFinishLaunchingWithOptions state: %d", application.applicationState);
     [OptimizelyHelper setupOptimizelyWithLaunchOptions:launchOptions];
     [self.window makeKeyAndVisible];
