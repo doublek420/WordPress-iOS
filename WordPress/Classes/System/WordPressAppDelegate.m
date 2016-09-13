@@ -59,6 +59,7 @@
 #import "WPPostViewController.h"
 #import "WPTabBarController.h"
 #import <WPMediaPicker/WPMediaPicker.h>
+#import <BuddyBuildSDK/BuddyBuildSDK.h>
 
 int ddLogLevel = DDLogLevelInfo;
 
@@ -123,6 +124,8 @@ int ddLogLevel = DDLogLevelInfo;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [BuddyBuildSDK setup];
+    
     DDLogVerbose(@"didFinishLaunchingWithOptions state: %d", application.applicationState);
 
     [self.window makeKeyAndVisible];
